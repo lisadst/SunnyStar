@@ -417,7 +417,11 @@ footer a {
 }
 
 .defilement-promo{
-  font-size:medium;
+  font-size:14px;
+}
+
+.engagements p{
+  font-size:20px;
 }
 
 }
