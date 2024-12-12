@@ -1,0 +1,313 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family:'Courier New', Courier, monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-image: linear-gradient(#03071E, #370617, #6A040F, #9D0208);
+  overflow-x: hidden;
+  color: white;
+  margin-top: 120px;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  background-color: black;
+  height: 100px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.sidebar label div {
+  width: 35px;
+  height: 3px;
+  background-color: white;
+  margin: 6px 0;
+}
+
+.sidebar {
+  position: fixed;
+  font-size:20px;
+  left: 40px;
+  top: 20px;
+  z-index: 1200;
+}
+
+#hamburger {
+  display: none;
+}
+
+#burger-icon {
+  cursor: pointer;
+  display: block;
+  color: white;
+  text-align: right;
+  transform: translateX(-30px);
+  padding: 10px;
+}
+
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+  background: black;
+  overflow: hidden;
+  width: 200px;
+  height: 300px;
+  border-radius: 5px;
+  box-shadow: inset 0px 0px 5px 5px #6A040F;
+  transform: translateX(-250px);
+}
+
+.sidebar a {
+  padding: 5px;
+  margin: 5px;
+  color: white;
+  text-decoration: none;
+}
+
+#burger-icon,
+nav {
+  transition: 0.7s;
+}
+
+#hamburger:checked~#burger-icon,
+#hamburger:checked~nav {
+  transform: translate(-40px);
+}
+
+main {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.coordonnees {
+  display: flex;
+  flex-direction: column;
+  font-size:25px;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+}
+
+#logo-insta {
+  position: relative;
+  top: 10px;
+}
+
+.bouton-contact {
+  background-color: #370617;
+  padding: 5px;
+  border-radius: 5px;
+  border: 2px solid black;
+  max-width:250px;
+  margin:20px 0px;
+}
+
+.bouton-contact:hover {
+  cursor: pointer;
+  background-color: #2F0514;
+  transition: background-color 0.2s;
+}
+
+.bouton-contact:active {
+  transition: background-color 0.2s;
+  background-color: black;
+}
+
+
+.form {
+  position: absolute;
+  left: -400px;
+  display: flex;
+  flex-direction: column;
+  align-content: space-around;
+  width: 300px;
+  padding:10px;
+  background-color:#370617;
+  border-radius:10px;
+  box-shadow:5px 5px 2px 2px rgb(0 0 0 / 30%);
+  margin-bottom:10px;
+}
+
+#contact:checked~#bouton-contact,
+#contact:checked~form {
+  transform: translate(470px);
+
+}
+
+.hidden {
+  display: none;
+}
+
+.form input, textarea{
+  margin:5px;
+}
+
+#submit{
+  padding:3px;
+  width:100px;
+  border-radius:10px;
+  border:0px solid #370617;
+}
+
+#bouton-contact,
+form {
+  transition: 0.7s;
+}
+
+.FAQ{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+.question {
+  padding: 10px;
+  width: 80%;
+}
+
+.accordion {
+  max-width: 750px;
+  margin: 20px;
+}
+
+.accordion-item {
+  border: 2px solid black;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  text-align: center;
+  font-size: large;
+  overflow: hidden;
+  background-image: linear-gradient(#571029,#370617);
+}
+
+.accordion-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+  cursor: pointer;
+  background-color: #571029;
+  color: white;
+  font-size:25px;
+}
+
+.accordion-header:hover {
+  background-color: #2F0514;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: scroll;
+  transition: max-height 0.3s ease;
+  padding: 0 15px;
+}
+
+.accordion-content p,
+h3 {
+  margin: 15px 0;
+  color: white;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+input[type="checkbox"]:checked+.accordion-header+.accordion-content {
+  max-height: 200px;
+}
+
+
+
+footer {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  background-color: black;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  /*height: 130px;
+  padding: 10px;*/
+  font-size:20px;
+}
+
+.nav-footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  color: white;
+  margin: 10px;
+}
+
+footer a {
+  text-decoration: none;
+  color: white;
+}
+
+.bouton-remonter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  background-color: #6A040F;
+  border-radius: 5px;
+  padding: 5px;
+  width: 40px;
+  height: 40px;
+}
+
+.bouton-remonter:hover {
+  background-color: #370617;
+  transition: background-color 0.2s;
+}
+
+.bouton-remonter:active {
+  background-color: black;
+}
+
+@media only screen and (max-width:480px){
+
+  .navbar{
+    justify-content:end;
+  }
+
+  main{
+    flex-direction:column;
+  }
+
+  .bouton-contact{
+    display:none;
+  }
+
+  .form{
+    position:relative;
+    margin:0px;
+    left:0px;
+    top:20px;
+  }
+
+  .FAQ{
+    margin-top:40px;
+  }
+
+}

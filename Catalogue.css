@@ -1,0 +1,291 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family:'Courier New', Courier, monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body{
+  background-image:linear-gradient(#03071E,#370617,#6A040F,#9D0208);
+  overflow-x:hidden;
+  margin-top:130px;
+}
+
+.navbar {
+  position:fixed;
+  top:0;
+  z-index:1000;
+  background-color: black;
+  height: 100px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.sidebar label div {
+  width: 35px;
+  height: 3px;
+  background-color: white;
+  margin: 6px 0;
+}
+
+.sidebar {
+  position: fixed;
+  font-size:20px;
+  left: 40px;
+  top: 20px;
+  z-index:1200;
+}
+
+#hamburger {
+  display: none;
+}
+
+#burger-icon {
+  cursor: pointer;
+  display: block;
+  color: white;
+  text-align: right;
+  transform: translateX(-30px);
+  padding: 10px;
+}
+
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+  background: black;
+  overflow: hidden;
+  width: 200px;
+  height:300px;
+  border-radius:5px;
+  box-shadow: inset 0px 0px 5px 5px #6A040F;
+  transform: translateX(-250px);
+}
+
+.sidebar a {
+  padding:5px;
+  margin:5px;
+  color: white;
+  text-decoration: none;
+}
+
+#burger-icon,
+nav {
+  transition: 0.7s;
+}
+
+#hamburger:checked~#burger-icon,
+#hamburger:checked~nav {
+  transform: translate(-40px);
+}
+
+
+.new-collection, .collection-standard{
+    text-align:center;
+    color:white;
+    
+}
+
+#special-tag{
+  background-color:#003e1f;
+  border-radius:5px;
+  border:3px solid #003e1f;
+  margin:0px auto;
+  font-size:50px;
+  font-weight:bold;
+  padding:5px 10px;
+  width:140px;
+  animation: flash 1s infinite;
+}
+
+@keyframes flash {
+  0%{
+    border:5px dotted red;
+  }
+
+  10%{
+    border: 5px dotted white;
+  }
+
+  20%{
+    border:5px dotted red;
+  }
+
+  40%{
+    border: 5px dotted white;
+  }
+
+  60%{
+    border:5px dotted red;
+  }
+
+  80%{
+    border:5px dotted white;
+  }
+
+  100%{
+    border:5px dotted red;
+  }
+}
+
+
+.produits{
+    display:flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    justify-content:space-around;
+    margin:0px auto;
+}
+
+.new-collection h1, .collection-standard h1{
+  font-size:50px;
+}
+
+.item-card{
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:10px;
+  margin:80px;
+  border:3px solid #E85D04;
+  border-radius:10px;
+  width:400px;
+}
+
+.item-card p{
+  margin:5px;
+  font-size:28px;
+}
+
+.item-card td{
+  background-color:#E85D04;
+  border:1px solid #F48C06;
+  padding:2px;
+}
+
+.item-card table{
+  width:80%;
+  height:40px;
+}
+
+.item-card:hover{
+  box-shadow: 7px 7px 5px 5px rgb(0 0 0 / 30%);
+}
+
+#non-available{
+  background-color:gray;
+  border:2px solid black;
+}
+
+#tag-promo{
+  position:absolute;
+  top:20px;
+  right:-20px;
+  width:140px;
+  font-size:50px;
+  background-color:#DC2F02;
+  padding:5px;
+  border-radius:5px;
+  border:5px solid #DC2F02;
+  animation: bordure 2s infinite linear;
+}
+
+#out-of-stock{
+  background-color:#E85D04;
+  font-weight:bold;
+  border-radius:5px;
+  width:130px;
+}
+
+@keyframes bordure{
+  20%{
+    border-top:5px solid white;
+  }
+
+  50%{
+    border-right:5px solid white;
+  }
+
+  80%{
+    border-bottom:5px solid white;
+  }
+
+  95%{
+    border-left:5px solid white;
+  }
+}
+
+footer{
+    position:relative;
+    bottom:0;
+    width:100%;
+    background-color:black;
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+   /* height:130px;
+    padding:10px;*/
+    font-size:20px;
+  }
+
+  .nav-footer{
+    display:flex;
+    flex-direction:column;
+    justify-content:space-evenly;
+    color:white;
+    margin:10px;
+  }
+
+  footer a {
+    text-decoration:none;
+    color:white;
+  }
+
+  .bouton-remonter{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    position:absolute;
+    right:10px;
+    bottom:10px;
+    background-color:#6A040F;
+    border-radius:5px;
+    padding:5px;
+    width:40px;
+    height:40px;
+  }
+
+  .bouton-remonter:hover{
+    background-color:#370617;
+    transition:background-color 0.2s;
+  }
+
+  .bouton-remonter:active{
+    background-color:black;
+  }
+
+  /*MODE MOBILE*/
+
+@media only screen and (max-width:480px){
+
+  .navbar{
+    justify-content:end;
+  }
+
+  .produits{
+    justify-content:center;
+    
+}
+
+}
+                                           
